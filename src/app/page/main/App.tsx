@@ -83,7 +83,7 @@ export default class App extends Component<any, any> {
                                         />
                                         <Route
                                             exact={true}
-                                            path='/home'
+                                            path='/'
                                             render={props => <LazyLoad {...props}
                                                                        component={System.import('./module/home')}/>}
                                         />

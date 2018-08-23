@@ -62,7 +62,7 @@ export const routes: RouteList[] = [
         type: 0,
         component: null,
     }, {
-        path: '/home',
+        path: '/',
         description: '',
         haveLeaf: true,
         id: 'home',
