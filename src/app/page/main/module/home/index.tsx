@@ -28,7 +28,7 @@ export class Banner extends Component<any, any> {
                         <img src={require('./images/bg_header.jpg')}/>
                     </div>
                     <div>
-                        <img src={require('./images/pro2.jpg')}/>
+                        <img src={require('./images/bg_header.jpg')}/>
                     </div>
                 </Carousel>
             </div>
