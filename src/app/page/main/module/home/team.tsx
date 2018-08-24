@@ -11,11 +11,19 @@ export default class Team extends Component<any, any> {
                 <h3>团队优势</h3>
                 <div className={style.TeamDiv}>
                     {
-                        store.teamList.map(item =>(
+                        store.teamList.map(item => (
                             <div className={style.TeamDivItem}>
-                                <img  src={item.img}/>
-                                <p>{item.title}</p>
+                                <div className={style.TeamDivItemIcon}>
+                                    {
+                                        item.id === 1 ? <i className={style.Icon1}>{}</i> :
+                                            item.id === 2 ? <i className={style.Icon2}>{}</i> :
+                                                item.id === 3 ? <i className={style.Icon3}>{}</i> :
+                                                    item.id === 4 ? <i className={style.Icon4}>{}</i> : null
+
+                                    }
+                                <h4>{item.title}</h4>
                                 <p>{item.text}</p>
+                                </div>
                             </div>
                         ))
                     }

@@ -3,6 +3,7 @@ import {observer} from 'mobx-react'
 import {Carousel} from 'antd';
 import * as style from "./style.pcss";
 import Team from './team'
+import {Footer} from 'component/footer'
 
 @observer
 export default class Home extends Component<any, any> {
@@ -12,6 +13,7 @@ export default class Home extends Component<any, any> {
                 <Banner/>
                 <Testimonial/>
                 <Team />
+                <Footer />
             </div>
         )
     }

@@ -88,8 +88,8 @@ export default class App extends Component<any, any> {
                                                                        component={System.import('./module/home')}/>}
                                         />
                                     </Content>
-                                    <Footer style={{textAlign: 'center'}}>
-                                        Ant Design ©2018 Created by Ant UED
+                                    <Footer style={{textAlign: 'center',background:'#060a1b',color:'#777',fontSize:12}}>
+                                        Copyright © 2017-2018 明德商务咨询有限公司, 蜀ICP备17004188号-2 All Rights Reserved
                                     </Footer>
                                 </Layout>
                             </Switch>
