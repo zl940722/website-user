@@ -27,11 +27,11 @@ config.devServer = {
     historyApiFallback: true,
     proxy: {
         '/api': {
-          //  target: ' http://192.168.79.204:8081',
-            target: 'http://adminsytest.huala.com',
-            secure: false,
+            target: 'http://api.syx.starcweb.cc',
             changeOrigin: true,
-            // pathRewrite: { '/api': '' },
+            pathRewrite: {
+                '^/api': ''  //重写接口
+            }
         },
     },
     compress: true,

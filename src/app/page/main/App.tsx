@@ -53,7 +53,6 @@ export default class App extends Component<any, any> {
                             <Switch>
                                 <Layout>
                                     <Header style={{position: 'fixed', zIndex: 1, width: '100%'}}>
-                                        {/*<div className="logo">111</div>*/}
                                         <SiderBar/>
                                     </Header>
                                     <Content style={{padding: '0 50px', marginTop: 64}}>
