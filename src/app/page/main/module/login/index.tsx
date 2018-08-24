@@ -43,11 +43,15 @@ export class Login extends React.Component<any, LoginState> {
 
     public render() {
         const {data} = this.store;
+        console.log(this.store.userInf , 'this.store.userInf')
         return (
             <div className={styles.container} style={{padding: '280px 0 144px 0', fontSize: '30px'}}>
                 <div className={styles.topLog} style={{padding: 20}}>
                     {/*<img alt="logo" style={{width: '60px', height: '60px'}} src={logo}/> website*/}
                 </div>
+                <p>{this.store.userInf.username}</p>
+                <p>{this.store.userInf.email}</p>
+                <p>{this.store.userInf.gmt_create}</p>
                 <div style={{width: 368, margin: '0 auto'}}>
                     {
                         this.store.isLog ?
@@ -74,7 +78,7 @@ export class Login extends React.Component<any, LoginState> {
                                     <FormItem>
                                         <Button
                                             style={{width: 368, height: 40}}
-                                            onClick={this.store.onSubmit}
+                                            onClick={this.store.onLogin}
                                             type="primary"
                                             className="login-form-button">
                                             登陆

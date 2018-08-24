@@ -8,13 +8,19 @@ export interface ILogin {
     password?: string;
 }
 
-export interface ILogin1 {
+export interface Iregister {
     biz_id: number
     username?: number;
     password?: string;
     nickname?: number;
     email?: string;
     mobile?: number;
+}
+
+export interface Ilogin {
+    biz_id: number
+    username?: number;
+    password?: string;
 }
 
 export class LoginApi {
@@ -33,7 +39,7 @@ export class LoginApi {
         );
     };
 
-    public loginIn1 = (params: { data: ILogin1 }, option = {}): ObservableType<any> => {
+    public register = (params: { data: Iregister }, option = {}): ObservableType<any> => {
         return createFetchWithStream<any>(
             {
                 ...{
@@ -46,7 +52,7 @@ export class LoginApi {
         );
     };
 
-    public getBannerList = (params: {}, option = {}): ObservableType<any> => {
+    public login = (params: { data: Ilogin }, option = {}): ObservableType<any> => {
         return createFetchWithStream<{
             rows: IBanner[],
             total: number,
@@ -54,9 +60,26 @@ export class LoginApi {
         }>(
             {
                 ...{
-                    url:`${this.base}/user_info`,
+                    url: `${this.base}/login`,
+                    method: 'post',
+                    data: params.data
+                },
+                ...option
+            }
+        );
+    };
+
+    public account = (params: { model }, option = {}): ObservableType<any> => {
+        return createFetchWithStream<{
+            rows: IBanner[],
+            total: number,
+            page: number
+        }>(
+            {
+                ...{
+                    url: `${this.base}/account`,
                     method: 'get',
-                    params: params
+                    params: params.model
                 },
                 ...option
             }
