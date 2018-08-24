@@ -7,7 +7,7 @@ export default class Contact extends Component<any, any> {
     public render() {
         return (
             <div>
-                contact
+                contactwqeqw
             </div>
         )
     }
