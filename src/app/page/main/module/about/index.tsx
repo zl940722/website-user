@@ -2,16 +2,33 @@ import React, {Component} from 'react'
 import {observer} from 'mobx-react'
 import * as style from "./style.pcss";
 import {Footer} from 'component/footer'
-import {Row, Col} from 'antd';
+import {Row, Col, Button} from 'antd';
+import {store} from './store'
+
+const redirectUrl = process.env.REDIRECT_URL;
 
 @observer
 export default class About extends Component<any, any> {
+
+    public componentWillMount() {
+        console.log(this.props.match.params.id, '2');
+        if (this.props.match.params.id !== 0) {
+            store.changeFlag(true)
+        }
+        store.changeId(this.props.match.params.id);
+        store.getDetail(this.props.match.params.id).subscribe(data => {
+            console.log(data, 'data');
+            store.detailList = data.data
+
+        })
+    }
+
 
     public render() {
         return (
             <div>
                 <CommonBanner/>
-                <Left/>
+                <Left {...this.props}/>
                 <Footer/>
             </div>
         )
@@ -24,7 +41,7 @@ export class CommonBanner extends Component<any, any> {
     public render() {
         return (
             <div style={{width: "100%"}}>
-                <img src={require('./images/banner.jpg')} style={{width: "100%",height:'200px'}}/>
+                <img src={require('./images/banner.jpg')} style={{width: "100%", height: '200px'}}/>
             </div>
         )
     }
@@ -33,22 +50,48 @@ export class CommonBanner extends Component<any, any> {
 
 @observer
 export class Left extends Component<any, any> {
+
+    public buy = (id) => {
+        return() =>{
+            window.open(redirectUrl + "pay.html#/?id=" + id);
+        }
+    }
+
     public render() {
+        console.log(store.id , ';store')
         return (
             <div style={{width: '60%', margin: '0 auto'}}>
                 <Row gutter={24}>
                     <Col className="gutter-row" xs={{span: 24}} sm={{span: 24}} xl={{span: 16}}>
                         <div>
                             <header className={style.pageHeader}>
-                                <h1 className={style.pageTitle}>About us</h1>
+                                {
+                                    store.id !== ':id' ?
+                                        <div>
+                                            <h1 className={style.pageTitle}>{store.detailList.title}</h1>
+                                            <h3>业务介绍</h3>
+                                            <p>
+                                                <img src={require('./images/about.jpg')} alt=""
+                                                     className={style.pullRight}
+                                                     width="300"/>
+                                                明德商务咨询有限公司为客户提供战略分析、战略选择、盈利模式设计、战略规划、战略保障体系设计、战略执行、战略评估、战略管理培训、细分的战略专题研究、战略突破行动、年度行动计划等服务，并致力于把战略管理的理念、知识、方法和工具传递给客户，促使客户内生相应的知识和能力。
+                                            </p>
+                                            <Button onClick={this.buy(store.id)} type={'primary'}>去购买</Button>
+                                        </div> :
+                                        <div>
+                                            <h1 className={style.pageTitle}>About us</h1>
+                                            <h3>公司简介</h3>
+                                            <p>
+                                                <img src={require('./images/about.jpg')} alt=""
+                                                     className={style.pullRight}
+                                                     width="300"/>
+                                                广锦商务人员全部为行业精英人员,是著名的社会事务调查服务机构，手续完备，实力雄厚，从业经验丰富，由各界精英组成强大专业的市场调查团队。
+                                                公司经过多年的运作和社会各界大力支持协作以及公司全体员工的不懈努力，业务覆盖全国大部分主要城市知名调查中心，公司最大的优势是：</p>
+                                            <p>强大的专业市场调查团队，由各界精英组成，他们具备严格的职业操守和道德规范使我们具备了高效、精准、高挑战性的专业市场调查技能和客观、正义的职业操守，应对各种突发事件的超常能力最大限度满足客户的要求，维护客户的合法权益。 </p>
+                                        </div>
+
+                                }
                             </header>
-                            <h3>公司简介</h3>
-                            <p>
-                                <img src={require('./images/about.jpg')} alt="" className={style.pullRight}
-                                     width="300"/>
-                                广锦商务人员全部为行业精英人员,是著名的社会事务调查服务机构，手续完备，实力雄厚，从业经验丰富，由各界精英组成强大专业的市场调查团队。
-                                公司经过多年的运作和社会各界大力支持协作以及公司全体员工的不懈努力，业务覆盖全国大部分主要城市知名调查中心，公司最大的优势是：</p>
-                            <p>强大的专业市场调查团队，由各界精英组成，他们具备严格的职业操守和道德规范使我们具备了高效、精准、高挑战性的专业市场调查技能和客观、正义的职业操守，应对各种突发事件的超常能力最大限度满足客户的要求，维护客户的合法权益。 </p>
                             <h3>公司理念</h3>
                             <p>公司诚实守信，服务全国。公司为委托调查设立了硬性标准和工作要求。遵循原则是：事实说明一切，证据决定输赢，法律维护权益。职业操守是：受人之托，忠人之事。执行到位，遵纪守法。</p>
                         </div>

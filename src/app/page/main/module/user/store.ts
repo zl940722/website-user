@@ -41,21 +41,23 @@ class Store {
         this.loading = !this.loading;
     };
 
-    @action public changeIsLoginIn(v) {
+    @action
+    public changeIsLoginIn(v) {
         this.isLogIn = v;
     }
 
     constructor() {
-        this.load()
+        this.load();
+        this.onAccount();
     }
 
     // 判断是否已经登录登录
     @action
     public load = () => {
 
-        return loginApi.userInfo({model:{biz_id:'1'}}).subscribe(data => {
+        return loginApi.userInfo({model: {biz_id: '1'}}).subscribe(data => {
             console.log(data.data.user_info, 'data');
-            this.defaultUserInf = data.data.user_info ;
+            this.defaultUserInf = data.data.user_info;
             this.changeIsLoginIn(true);
         })
     };
@@ -101,18 +103,24 @@ class Store {
             if (data.success) {
                 message.success(data.data);
                 this.load()
-                loginApi.account({model:{ biz_id: 1}}).subscribe(data => {
-                    console.log(data , 'data')
-                    this.defaultUserInf = data.data.user_info;
-                    this.changeIsLoginIn(true)
-                })
+                this.onAccount();
 
             }
         })
 
     }
 
+    // 获取用户信息
+    @action
+    public onAccount = () => {
 
+        loginApi.account({model: {biz_id: 1}}).subscribe(data => {
+            console.log(data, 'data')
+            this.defaultUserInf = data.data.user_info;
+            this.changeIsLoginIn(true)
+        })
+
+    }
 }
 
 export const store = new Store();

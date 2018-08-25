@@ -8,3 +8,5 @@ export const defaultInfDivSpan: string;
 export const defaultInfDivSpan1: string;
 export const defaultInfTh: string;
 export const defaultInfTd: string;
+export const defaultInfTh1: string;
+export const defaultInfTd1: string;

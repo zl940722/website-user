@@ -23,27 +23,35 @@ export interface Ilogin {
     password?: string;
 }
 
+export interface Ipay {
+    biz_id: number
+    item_id?: number;
+    remark?: string;
+}
+
 export class LoginApi {
     private base = `${COLLECTION_FORMATS.api}/user`;
     private base1 = `${COLLECTION_FORMATS.api}/item`;
+    private base2 = `${COLLECTION_FORMATS.api}/pay`;
 
-    // public loginIn = (params: { data: ILogin }, option = {}): ObservableType<any> => {
-    //     return createFetchWithStream<any>(
-    //         {
-    //             ...{
-    //                 url: `${this.base}/login`,
-    //                 method: 'post',
-    //                 data: params.data
-    //             },
-    //             ...option
-    //         }
-    //     );
-    // };
     public list = (params: { model }, option = {}): ObservableType<any> => {
         return createFetchWithStream<any>(
             {
                 ...{
                     url: `${this.base1}/list`,
+                    method: 'get',
+                    params: params.model
+                },
+                ...option
+            }
+        );
+    };
+
+    public detail = (params: { model }, option = {}): ObservableType<any> => {
+        return createFetchWithStream<any>(
+            {
+                ...{
+                    url: `${this.base1}/detail`,
                     method: 'get',
                     params: params.model
                 },
@@ -70,6 +78,19 @@ export class LoginApi {
             {
                 ...{
                     url: `${this.base}/register`,
+                    method: 'post',
+                    data: params.data
+                },
+                ...option
+            }
+        );
+    };
+
+    public submit_buy = (params: { data: Ipay }, option = {}): ObservableType<any> => {
+        return createFetchWithStream<any>(
+            {
+                ...{
+                    url: `${this.base2}/submit_buy`,
                     method: 'post',
                     data: params.data
                 },

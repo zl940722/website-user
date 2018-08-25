@@ -68,6 +68,22 @@ export class Login extends React.Component<any, LoginState> {
                                         <span>{store.defaultUserInf.gmt_create}</span>
                                     </div>
                                 </div>
+
+                                <div className={styles.defaultInfDivSpan}>
+                                    <span className={styles.defaultInfDivSpan1}>已购买:</span>
+                                    <div className={styles.defaultInfTh1}>
+                                        <span>商品名</span>
+                                        <span>商品价格</span>
+                                        <span>收货地址</span>
+                                        <span>购买日期</span>
+                                    </div>
+                                    <div className={styles.defaultInfTd1}>
+                                        <span>{store.defaultUserInf.username}</span>
+                                        <span>{store.defaultUserInf.email}</span>
+                                        <span>{store.defaultUserInf.gmt_create}</span>
+                                        <span>{store.defaultUserInf.gmt_create}</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         :

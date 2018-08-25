@@ -15,16 +15,16 @@ export default class Business extends Component<any, any> {
 
     public render() {
         return (
-            <div style={{background:'#fff'}}>
+            <div style={{background: '#fff'}}>
                 <div style={{width: "100%"}}>
-                    <img src={require('./images/banner.jpg')} style={{width: "100%",height:'200px'}}/>
+                    <img src={require('./images/banner.jpg')} style={{width: "100%", height: '200px'}}/>
                 </div>
                 <div className={style.business}>
                     <p>欢迎来到广锦商务，我们竭诚为您服务</p>
                     <p>Welcome to GuangJin</p>
                 </div>
-                <Product/>
-                <Bottom />
+                <Product {...this.props}/>
+                <Bottom/>
                 <Footer/>
             </div>
         )
@@ -33,110 +33,47 @@ export default class Business extends Component<any, any> {
 
 @observer
 export class Product extends Component<any, any> {
+
+    public onClick = (id) => {
+        return () => {
+            this.props.history.push(`/about/${id}`);
+        }
+
+    }
+
     public render() {
         return (
             <div style={{width: '60%', margin: '0 auto'}}>
-                <Row gutter={16}>
-                    <Col className="gutter-row" xs={{span: 24}} sm={{span: 24}} xl={{span: 6}}>
-                        <div>
-                            <div className={style.pricingBoxItem}>
-                                <div className={style.pricingHeading}>
-                                    <h3><strong>战略咨询</strong></h3>
-                                </div>
-                                <div className={style.pricingTerms}>
-                                    <h6>0 / 次</h6>
-                                </div>
-                                <div className={style.pricingContainer}>
-                                    <ul>
-                                        <li> 商务组合管理分析</li>
-                                        <li>量化的SWOT组合分析</li>
-                                        <li> 中长期商业计划</li>
-                                        <li>客户分类及客户选择矩阵</li>
-                                        <li> 普氏概念选择矩阵</li>
-                                    </ul>
-                                </div>
-                                <div className={style.pricingAction}>
-                                    <a href="" className="btn btn-medium">查看详情</a>
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="gutter-row" xs={{span: 24}} sm={{span: 24}} xl={{span: 6}}>
-                        <div>
-                            <div className={style.pricingBoxItem}>
-                                <div className={style.pricingHeading}>
-                                    <h3><strong>战略咨询</strong></h3>
-                                </div>
-                                <div className={style.pricingTerms}>
-                                    <h6>0 / 次</h6>
-                                </div>
-                                <div className={style.pricingContainer}>
-                                    <ul>
-                                        <li><i className="icon-ok">{}</i> 商务组合管理分析</li>
-                                        <li><i className="icon-ok">{}</i> 量化的SWOT组合分析</li>
-                                        <li><i className="icon-ok">{}</i> 中长期商业计划</li>
-                                        <li><i className="icon-ok">{}</i> 客户分类及客户选择矩阵</li>
-                                        <li><i className="icon-ok">{}</i> 普氏概念选择矩阵</li>
-                                    </ul>
-                                </div>
-                                <div className={style.pricingAction}>
-                                    <a href="zlzx.html" className="btn btn-medium"><i
-                                        className="icon-bolt">{}</i>查看详情</a>
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="gutter-row" xs={{span: 24}} sm={{span: 24}} xl={{span: 6}}>
-                        <div>
-                            <div className={style.pricingBoxItem}>
-                                <div className={style.pricingHeading}>
-                                    <h3><strong>战略咨询</strong></h3>
-                                </div>
-                                <div className={style.pricingTerms}>
-                                    <h6>0 / 次</h6>
-                                </div>
-                                <div className={style.pricingContainer}>
-                                    <ul>
-                                        <li><i className="icon-ok">{}</i> 商务组合管理分析</li>
-                                        <li><i className="icon-ok">{}</i> 量化的SWOT组合分析</li>
-                                        <li><i className="icon-ok">{}</i> 中长期商业计划</li>
-                                        <li><i className="icon-ok">{}</i> 客户分类及客户选择矩阵</li>
-                                        <li><i className="icon-ok">{}</i> 普氏概念选择矩阵</li>
-                                    </ul>
-                                </div>
-                                <div className={style.pricingAction}>
-                                    <a href="zlzx.html" className="btn btn-medium"><i
-                                        className="icon-bolt">{}</i>查看详情</a>
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="gutter-row" xs={{span: 24}} sm={{span: 24}} xl={{span: 6}}>
-                        <div>
-                            <div className={style.pricingBoxItem}>
-                                <div className={style.pricingHeading}>
-                                    <h3><strong>战略咨询</strong></h3>
-                                </div>
-                                <div className={style.pricingTerms}>
-                                    <h6>0 / 次</h6>
-                                </div>
-                                <div className={style.pricingContainer}>
-                                    <ul>
-                                        <li><i className="icon-ok">{}</i> 商务组合管理分析</li>
-                                        <li><i className="icon-ok">{}</i> 量化的SWOT组合分析</li>
-                                        <li><i className="icon-ok">{}</i> 中长期商业计划</li>
-                                        <li><i className="icon-ok">{}</i> 客户分类及客户选择矩阵</li>
-                                        <li><i className="icon-ok">{}</i> 普氏概念选择矩阵</li>
-                                    </ul>
-                                </div>
-                                <div className={style.pricingAction}>
-                                    <a href="zlzx.html" className="btn btn-medium"><i
-                                        className="icon-bolt">{}</i>查看详情</a>
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
-                </Row>
+                <div>
+                    <Row gutter={16}>
+                        {
+                            store.list.map((item) => (
+                                <Col className="gutter-row" xs={{span: 24}} sm={{span: 24}} xl={{span: 6}}>
+                                    <div className={style.pricingBoxItem}>
+                                        <div className={style.pricingHeading}>
+                                            <h3><strong>{item.title}</strong></h3>
+                                        </div>
+                                        <div className={style.pricingTerms}>
+                                            <h6>{item.price / 100}元 / 次</h6>
+                                        </div>
+                                        <div className={style.pricingContainer}>
+                                            <ul>
+                                                <li>{JSON.parse(item.biz_custom_desc)[0]}</li>
+                                                <li>{JSON.parse(item.biz_custom_desc)[1]}</li>
+                                                <li>{JSON.parse(item.biz_custom_desc)[2]}</li>
+                                                <li>{JSON.parse(item.biz_custom_desc)[3]}</li>
+                                                <li>{JSON.parse(item.biz_custom_desc)[4]}</li>
+                                            </ul>
+                                        </div>
+                                        <div onClick={this.onClick(item.item_id)}  className={style.pricingAction}>
+                                            <a className="btn btn-medium">查看详情</a>
+                                        </div>
+                                    </div>
+                                </Col>
+                            ))
+                        }
+                    </Row>
+                </div>
             </div>
         )
     }
@@ -144,7 +81,7 @@ export class Product extends Component<any, any> {
 
 @observer
 export class Bottom extends Component<any, any> {
-    public render(){
+    public render() {
         return (
             <div>
                 <div className={style.container}>

@@ -39,7 +39,7 @@ export const routes: RouteList[] = [
         type: 0,
         component: null,
     }, {
-        path: '/about',
+        path: '/about/:id',
         description: '',
         haveLeaf: true,
         id: 'about',

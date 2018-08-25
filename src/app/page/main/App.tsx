@@ -72,9 +72,15 @@ export default class App extends Component<any, any> {
                                         />
                                         <Route
                                             exact={true}
-                                            path='/about'
+                                            path='/about/:id'
                                             render={props => <LazyLoad {...props}
                                                                        component={System.import('./module/about')}/>}
+                                        />
+                                        <Route
+                                            exact={true}
+                                            path='/productDetail/:id'
+                                            render={props => <LazyLoad {...props}
+                                                                       component={System.import('./module/productDetail')}/>}
                                         />
                                         <Route
                                             exact={true}
