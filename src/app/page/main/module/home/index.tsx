@@ -29,8 +29,9 @@ export class Banner extends Component<any, any> {
 
             <div style={{width: '100%'}}>
                 <Carousel className={style.banner} autoplay={false}>
-                    <div>
+                    <div style={{position:"relative"}}>
                         <img src={require('./images/bg_header.jpg')}/>
+                        <h1 className={style.bannertitle}>商务信息咨询</h1>
                     </div>
                     <div>
                         <img src={require('./images/bg_header.jpg')}/>
@@ -52,7 +53,7 @@ export class Testimonial extends Component<any, any> {
                         <img src={require('./images/bg_header.jpg')}/>
                     </div>
                     <div>
-                        <img src={require('./images/pro2.jpg')}/>
+                        <img src={require('./images/one.jpg')}/>
                     </div>
                 </Carousel>
             </div>

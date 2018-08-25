@@ -9,3 +9,4 @@ export const Icon1: string;
 export const Icon2: string;
 export const Icon3: string;
 export const Icon4: string;
+export const bannertitle: string;
