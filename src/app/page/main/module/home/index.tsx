@@ -10,6 +10,7 @@ export default class Home extends Component<any, any> {
     public render() {
         return (
             <div>
+                {/*<Ho/>*/}
                 <Banner/>
                 <Testimonial/>
                 <Team />
@@ -18,6 +19,8 @@ export default class Home extends Component<any, any> {
         )
     }
 }
+
+
 
 @observer
 export class Banner extends Component<any, any> {

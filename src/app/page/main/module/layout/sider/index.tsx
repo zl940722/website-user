@@ -17,11 +17,23 @@ export class SiderBar extends Component<any, any> {
     public openMenu = v => {
         uiStore.setOpenKeys(v[v.length - 1]);
     };
+    public state = {
+        collapsed: false,
+    };
 
+    public toggleCollapsed = () => {
+        this.setState({
+            collapsed: !this.state.collapsed,
+        });
+    }
     public render() {
+
         return (
             <div className={style.side}>
-                <img style={{position:'absolute'}} src ={require('./resources/logo.png')}/>
+                {/*<img style={{position:'absolute'}} src ={require('')}/>*/}
+                {/*<Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>*/}
+                    {/*<Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />*/}
+                {/*</Button>*/}
                 <Menu
                     onClick={this.MenuClick}
                     theme="dark"
@@ -29,7 +41,9 @@ export class SiderBar extends Component<any, any> {
                     selectedKeys={[uiStore.selectedKeys]}
                     onOpenChange={this.openMenu}
                     openKeys={[uiStore.openKeys]}
+                    inlineCollapsed={this.state.collapsed}
                 >
+
 
                     {
                         routes.map((route: RouteList, key) => {
@@ -41,32 +55,9 @@ export class SiderBar extends Component<any, any> {
                                     </Link>
                                 </Menu.Item>
                             )
-                            // if (_.isEmpty(route.leaf)) {
-                            //     return (
-                            //         <Item key={route.path}>
-                            //             <Link to={route.path}>
-                            //                 {route.icon ? <Icon type={route.icon}/> : null}
-                            //                 <span className="nav-text">{route.name}</span>
-                            //             </Link>
-                            //         </Item>
-                            //     )
-                            // } else {
-                            //     return (
-                            //         <SubMenu
-                            //             key={route.path}
-                            //             title={<span>
-                            //                {route.icon ? <Icon type={route.icon}/> : null}
-                            //                 <span className="nav-text">{route.name}</span></span>}>
-                            //             {route.leaf ? route.leaf.map((routeItem: RouteList) => {
-                            //                 return <Item key={routeItem.path}><Link
-                            //                     to={routeItem.path}>{routeItem.name}</Link></Item>
-                            //             }) : null
-                            //             }
-                            //         </SubMenu>
-                            //     )
-                            // }
                         })
                     }
+
                 </Menu>
             </div>
         )

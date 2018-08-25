@@ -53,7 +53,9 @@ export default class App extends Component<any, any> {
                             <Switch>
                                 <Layout>
                                     <Header style={{position: 'fixed', zIndex: 1, width: '100%'}}>
-                                        <SiderBar/>
+                                        <div style={{ width: '60%',margin: '0 auto'}}>
+                                            <SiderBar/>
+                                        </div>
                                     </Header>
                                     <Content style={{padding: '0 50px', marginTop: 64}}>
                                         <Route
