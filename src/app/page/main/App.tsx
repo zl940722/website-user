@@ -90,7 +90,7 @@ export default class App extends Component<any, any> {
                                         />
                                     </Content>
                                     <Footer style={{textAlign: 'center',background:'#060a1b',color:'#777',fontSize:12}}>
-                                        Copyright © 2017-2018 明德商务咨询有限公司, 蜀ICP备17004188号-2 All Rights Reserved
+                                        Copyright © 2017-2018 广锦商务，苏ICP备18027413号-2 All Rights Reserved
                                     </Footer>
                                 </Layout>
                             </Switch>
