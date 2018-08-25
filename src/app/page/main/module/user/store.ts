@@ -48,7 +48,8 @@ class Store {
     constructor() {
         this.load()
     }
-    // 判断是否登录
+
+    // 判断是否已经登录登录
     @action
     public load = () => {
 
@@ -99,16 +100,12 @@ class Store {
             console.log(data, 'data')
             if (data.success) {
                 message.success(data.data);
+                this.load()
                 loginApi.account({model:{ biz_id: 1}}).subscribe(data => {
                     console.log(data , 'data')
-                    this.changeUserInf(data.data.user_info);
+                    this.defaultUserInf = data.data.user_info;
                     this.changeIsLoginIn(true)
                 })
-                // this.changeIsLog(true)
-                // sessionStorage.setItem('LoginType', 'LoginIn');
-                // sessionStorage.setItem('Token', data.token);
-                // sessionStorage.setItem('menu', JSON.stringify(data.menuList))
-                //  window.location.href = redirectUrl + 'main.html#/';
 
             }
         })

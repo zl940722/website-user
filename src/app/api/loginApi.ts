@@ -25,14 +25,27 @@ export interface Ilogin {
 
 export class LoginApi {
     private base = `${COLLECTION_FORMATS.api}/user`;
+    private base1 = `${COLLECTION_FORMATS.api}/item`;
 
-    public loginIn = (params: { data: ILogin }, option = {}): ObservableType<any> => {
+    // public loginIn = (params: { data: ILogin }, option = {}): ObservableType<any> => {
+    //     return createFetchWithStream<any>(
+    //         {
+    //             ...{
+    //                 url: `${this.base}/login`,
+    //                 method: 'post',
+    //                 data: params.data
+    //             },
+    //             ...option
+    //         }
+    //     );
+    // };
+    public list = (params: { model }, option = {}): ObservableType<any> => {
         return createFetchWithStream<any>(
             {
                 ...{
-                    url: `${this.base}/login`,
-                    method: 'post',
-                    data: params.data
+                    url: `${this.base1}/list`,
+                    method: 'get',
+                    params: params.model
                 },
                 ...option
             }
