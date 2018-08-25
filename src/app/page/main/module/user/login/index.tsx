@@ -10,7 +10,6 @@ interface LoginState {
     loading: boolean
 }
 
-// const logo = require('./resources/sunlogoTop.png');
 
 // function formatMonth(time) {
 //     const date = new Date(time);

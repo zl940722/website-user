@@ -53,7 +53,7 @@ export class Left extends Component<any, any> {
 
     public buy = (id) => {
         return() =>{
-            window.open(redirectUrl + "pay.html#/?id=" + id);
+            window.open(redirectUrl + "pay.html#/?id=" + id,"_self");
         }
     }
 

@@ -1,6 +1,6 @@
 import {observable, action} from 'mobx';
 import {LoginApi} from "api/LoginApi";
-import {message} from 'antd';
+const redirectUrl = process.env.REDIRECT_URL;
 
 const loginApi = new LoginApi();
 
@@ -33,10 +33,10 @@ export class LoginStore {
             biz_id: 1,
             item_id: this.id,
             remark: '1111'
-        }
-
+        };
+        window.open(redirectUrl + "main.html#/user","_self");
         return loginApi.submit_buy({data: loginData}).subscribe(data => {
-            message.success('购买成功')
+
 
         })
 
