@@ -5,22 +5,13 @@ import * as styles from './Login.pcss';
 import {store} from "../store";
 
 const FormItem = Form.Item;
+const moment = require('moment');
+
 
 interface LoginState {
     loading: boolean
 }
 
-
-// function formatMonth(time) {
-//     const date = new Date(time);
-//     const Y = date.getFullYear() + '-';
-//     const M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
-//     const D = date.getDate() + ' ';
-//     const h = date.getHours() + ':';
-//     const m = date.getMinutes() + ':';
-//     const s = date.getSeconds();
-//     return Y + M + D + h + m + s
-// }
 
 @observer
 export class Login extends React.Component<any, LoginState> {
@@ -46,13 +37,13 @@ export class Login extends React.Component<any, LoginState> {
 
     public render() {
         const {data} = store;
-        console.log(store.userInf, 'this.store.userInf')
         return (
             <div>
                 {
+                    // 是否已经是登录状态
                     store.isLogIn ?
                         <div className={styles.defaultInf}>
-                            <h1 style={{color:'#629aa9'}}>Tables</h1>
+                            <h1 style={{color: '#629aa9'}}>Tables</h1>
                             <div className={styles.defaultInfDiv}>
                                 <div className={styles.defaultInfDivSpan}>
                                     <span className={styles.defaultInfDivSpan1}>个人信息表:</span>
@@ -64,7 +55,13 @@ export class Login extends React.Component<any, LoginState> {
                                     <div className={styles.defaultInfTd}>
                                         <span>{store.defaultUserInf.username}</span>
                                         <span>{store.defaultUserInf.email}</span>
-                                        <span>{store.defaultUserInf.gmt_create}</span>
+                                        <span>
+                                            {
+                                                store.defaultUserInf.gmt_create !== undefined ?
+                                                    moment(1535104095).format('YYYY-MM-DD') :
+                                                    null
+                                            }
+                                        </span>
                                     </div>
                                 </div>
 
@@ -77,10 +74,22 @@ export class Login extends React.Component<any, LoginState> {
                                         <span>购买日期</span>
                                     </div>
                                     <div className={styles.defaultInfTd1}>
-                                        <span>{store.defaultUserInf.username}</span>
-                                        <span>{store.defaultUserInf.email}</span>
-                                        <span>{store.defaultUserInf.gmt_create}</span>
-                                        <span>{store.defaultUserInf.gmt_create}</span>
+                                        {
+                                            store.purchased_list.map(item => (
+                                                <div>
+                                                    <span>{item.title}</span>
+                                                    <span>{item.price}</span>
+                                                    <span>{item.adress}</span>
+                                                    <span>
+                                                        {
+                                                            store.defaultUserInf.gmt_create !== undefined ?
+                                                                moment(1535104095).format('YYYY-MM-DD') :
+                                                                null
+                                                        }
+                                                        </span>
+                                                </div>
+                                            ))
+                                        }
                                     </div>
                                 </div>
                             </div>

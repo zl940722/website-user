@@ -10,6 +10,7 @@ class Store {
     @observable public data = {username: '', email: '', password: ''};
     @observable public userInf: any = {};
     @observable public defaultUserInf: any = {};
+    @observable public purchased_list: any = [];
     @observable public loading = false;
     @observable public isLog = false;
     @action
@@ -117,6 +118,7 @@ class Store {
         loginApi.account({model: {biz_id: 1}}).subscribe(data => {
             console.log(data, 'data')
             this.defaultUserInf = data.data.user_info;
+            this.purchased_list = data.data.purchased_list
             this.changeIsLoginIn(true)
         })
 
