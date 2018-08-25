@@ -39,6 +39,19 @@ export class LoginApi {
         );
     };
 
+    public userInfo = (params: { model }, option = {}): ObservableType<any> => {
+        return createFetchWithStream<any>(
+            {
+                ...{
+                    url: `${this.base}/user_info`,
+                    method: 'get',
+                    params: params.model
+                },
+                ...option
+            }
+        );
+    };
+
     public register = (params: { data: Iregister }, option = {}): ObservableType<any> => {
         return createFetchWithStream<any>(
             {
