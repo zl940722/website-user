@@ -17,7 +17,7 @@ export default class Business extends Component<any, any> {
         return (
             <div style={{background:'#fff'}}>
                 <div style={{width: "100%"}}>
-                    <img src={require('./images/banner.jpg')} style={{width: "100%"}}/>
+                    <img src={require('./images/banner.jpg')} style={{width: "100%",height:'200px'}}/>
                 </div>
                 <div className={style.business}>
                     <p>欢迎来到广锦商务，我们竭诚为您服务</p>

@@ -24,7 +24,7 @@ export class CommonBanner extends Component<any, any> {
     public render() {
         return (
             <div style={{width: "100%"}}>
-                <img src={require('./images/banner.jpg')} style={{width: "100%"}}/>
+                <img src={require('./images/banner.jpg')} style={{width: "100%",height:'200px'}}/>
             </div>
         )
     }
