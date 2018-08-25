@@ -21,7 +21,7 @@ export default class Business extends Component<any, any> {
                 </div>
                 <div className={style.business}>
                     <p>欢迎来到广锦商务，我们竭诚为您服务</p>
-                    <p>Welcome to guangjin</p>
+                    <p>Welcome to GuangJin</p>
                 </div>
                 <Product/>
                 <Bottom />
@@ -44,7 +44,7 @@ export class Product extends Component<any, any> {
                                     <h3><strong>战略咨询</strong></h3>
                                 </div>
                                 <div className={style.pricingTerms}>
-                                    <h6>$1500.00 / Year</h6>
+                                    <h6>0 / 次</h6>
                                 </div>
                                 <div className={style.pricingContainer}>
                                     <ul>
@@ -68,7 +68,7 @@ export class Product extends Component<any, any> {
                                     <h3><strong>战略咨询</strong></h3>
                                 </div>
                                 <div className={style.pricingTerms}>
-                                    <h6>$1500.00 / Year</h6>
+                                    <h6>0 / 次</h6>
                                 </div>
                                 <div className={style.pricingContainer}>
                                     <ul>
@@ -93,7 +93,7 @@ export class Product extends Component<any, any> {
                                     <h3><strong>战略咨询</strong></h3>
                                 </div>
                                 <div className={style.pricingTerms}>
-                                    <h6>$1500.00 / Year</h6>
+                                    <h6>0 / 次</h6>
                                 </div>
                                 <div className={style.pricingContainer}>
                                     <ul>
@@ -118,7 +118,7 @@ export class Product extends Component<any, any> {
                                     <h3><strong>战略咨询</strong></h3>
                                 </div>
                                 <div className={style.pricingTerms}>
-                                    <h6>$1500.00 / Year</h6>
+                                    <h6>0 / 次</h6>
                                 </div>
                                 <div className={style.pricingContainer}>
                                     <ul>
@@ -180,7 +180,7 @@ export class Bottom extends Component<any, any> {
                         5、企业战略的调整、业务的重新组合，如何通过价值链的优化来支撑？
                     </div>
                     <div className={style.descText}>
-                        二、明德商务的解决思路
+                        二、广锦商务的解决思路
                         1、对企业当前的组织流程进行调研及诊断；
                         2、对企业的责权体系进行梳理；
                         3、运用价值链分析法、职责细分法、参照法对企业流程制度框架的搭设；
@@ -194,8 +194,8 @@ export class Bottom extends Component<any, any> {
                         培训服务
                     </div>
                     <div className={style.descText}>
-                        四川明德商务咨询有限公司本质上是帮助企业设计赢得竞争的蓝本，成功的关键在于深入行业理解和全视角市场研判基础上竞争模式与竞争格局的设计，导航企业跨越式发展的最优路径。
-                        四川明德商务建立了丰富的行业数据库、典型企业数据库和标杆样本，与全球行业领袖企业、资本市场研究机构和政策研究机构、学术研究机构分享数据。四川明德商务强化战略规划与市场体系的融合，强调战略规划的实施落地，通过督导机制和战略成熟度评价体系关注客户业务和竞争力的进步。
+                        广锦商务咨询有限公司本质上是帮助企业设计赢得竞争的蓝本，成功的关键在于深入行业理解和全视角市场研判基础上竞争模式与竞争格局的设计，导航企业跨越式发展的最优路径。
+                        广锦商务建立了丰富的行业数据库、典型企业数据库和标杆样本，与全球行业领袖企业、资本市场研究机构和政策研究机构、学术研究机构分享数据。四川明德商务强化战略规划与市场体系的融合，强调战略规划的实施落地，通过督导机制和战略成熟度评价体系关注客户业务和竞争力的进步。
                     </div>
 
                 </div>
