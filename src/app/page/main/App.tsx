@@ -48,7 +48,7 @@ export default class App extends Component<any, any> {
         return (
             <div>
                 {
-                    sessionStorage.getItem('LoginType') === 'LoginIn' ?
+                 //   sessionStorage.getItem('LoginType') === 'LoginIn' ?
                         <Router>
                             <Switch>
                                 <Layout>
@@ -92,8 +92,8 @@ export default class App extends Component<any, any> {
                                     </Footer>
                                 </Layout>
                             </Switch>
-                        </Router> :
-                        {}
+                        </Router>
+               // :{}
                 }
 
             </div>
