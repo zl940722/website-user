@@ -9,7 +9,7 @@ import {Layout} from 'antd';
 
 const {Header, Content, Footer} = Layout;
 
-const redirectUrl = process.env.REDIRECT_URL;
+// const redirectUrl = process.env.REDIRECT_URL;
 
 
 @observer
@@ -19,17 +19,17 @@ export default class App extends Component<any, any> {
         super();
         this.CreateRoute(routes);
 
-        if (sessionStorage.getItem('LoginType')) {
-            if (sessionStorage.getItem('LoginType') === 'LoginIn') {
-                console.log();
-            } else {
-                window.location.href = redirectUrl + 'login.html#/';
-                sessionStorage.clear();
-            }
-        } else {
-            window.location.href = redirectUrl + 'login.html#/';
-            sessionStorage.clear();
-        }
+        // if (sessionStorage.getItem('LoginType')) {
+        //     if (sessionStorage.getItem('LoginType') === 'LoginIn') {
+        //         console.log();
+        //     } else {
+        //         window.location.href = redirectUrl + 'login.html#/';
+        //         sessionStorage.clear();
+        //     }
+        // } else {
+        //     window.location.href = redirectUrl + 'login.html#/';
+        //     sessionStorage.clear();
+        // }
 
     }
 

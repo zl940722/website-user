@@ -5,7 +5,7 @@ import {Icon, Layout, Avatar, Menu, Dropdown} from 'antd'
 import * as styles from './index.pcss';
 
 const {Header} = Layout;
-const redirectUrl = process.env.REDIRECT_URL;
+// const redirectUrl = process.env.REDIRECT_URL;
 
 @observer
 export class HeaderCustom extends Component<any, any> {
@@ -23,7 +23,7 @@ export class HeaderCustom extends Component<any, any> {
     public handleMenuClick = (e) => {
         if (e.key === '1') {
             this.setState({visible: false});
-            window.location.href = redirectUrl + 'login.html#/';
+           // window.location.href = redirectUrl + 'login.html#/';
             sessionStorage.clear();
         }
     }

@@ -36,11 +36,11 @@ export function axiosOptionFormat(option: AxiosRequestConfig): Rx.AjaxRequest {
 
 function mapData(res: any) {
 
-    const redirectUrl = process.env.REDIRECT_URL;
+  //  const redirectUrl = process.env.REDIRECT_URL;
 
     if (res.status === '401') {
-        window.location.href = redirectUrl + '/login.html#/';
-        sessionStorage.clear();
+       // window.location.href = redirectUrl + '/login.html#/';
+       // sessionStorage.clear();
         return null
     }
 
